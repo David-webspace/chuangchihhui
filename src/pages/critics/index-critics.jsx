@@ -1,0 +1,8 @@
+export {default as Critics1} from './Critics1'
+export {default as Critics2} from './Critics2'
+export {default as Critics3} from './Critics3'
+export {default as Critics4} from './Critics4'
+export {default as Critics5} from './Critics5'
+export {default as Critics6} from './Critics6'
+export {default as Critics7} from './Critics7'
+export {default as Critics8} from './Critics8'

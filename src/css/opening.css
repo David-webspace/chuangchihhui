@@ -1,0 +1,129 @@
+.openingContainer{
+    width: 100%;
+    height: 100vh;
+    margin-top: -60px;
+    transition: background-color 0.5s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.sloganContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    z-index: 40;
+    transition: all 0.5ds ease-in-out;
+}
+
+.sloganContainer p{
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    width: 100%;
+}
+
+.exploreContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 80%;
+    width: 100%;
+    z-index: 45;
+    cursor: pointer;
+}
+
+.exploreBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    text-align: center;
+    color: var(--white);
+    border: 1px solid var(--white);
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+
+.exploreBtn:hover{
+    color: rgb(234, 234, 234);
+}
+
+.OpeningBG{
+    width: 100%;
+    height: 100%;
+    z-index: 40;
+    background-image: url("//live.staticflickr.com/65535/54411619563_3f6339fbfd_h.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+@media (max-width:1024px) {
+    .openingContainer{
+        height: 80vh;
+    }
+
+    .OpeningBG{
+        /* height: 80vh; */
+    }
+
+    .sloganContainer{
+        top: 40%;
+    }
+
+    .sloganContainer h1{
+        font-size: 16px;
+    }
+}
+
+@media (max-width:768px) {
+    .openingContainer{
+        height: 60vh;
+    }
+
+    .OpeningBG{
+        /* height: 60vh; */
+    }
+
+    .sloganContainer h1{
+        font-size: 16px;
+    }
+
+    .sloganContainer p{
+        width: auto;
+    }
+
+    .exploreContainer{
+        top: 70%;
+    }
+}
+
+@media (max-width:425px) {
+    .openingContainer{
+        height: 20vh;
+        margin-top: -20px;
+    }
+
+    .OpeningBG{
+        /* height: 20vh; */
+    }
+
+    .sloganContainer h1{
+        font-size: 16px;
+    }
+
+    .exploreBtn{
+        width: auto;
+        padding: 5px 30px;
+    }
+
+    .exploreBtn h4{
+        font-size: 12px;
+    }
+}

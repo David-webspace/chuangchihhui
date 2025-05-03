@@ -1,0 +1,8 @@
+<svg width="789" height="789" viewBox="0 0 789 789" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M526 0H789V263H526V0Z" fill="#070707"/>
+<path d="M526 263H789V526H526V263Z" fill="#070707"/>
+<path d="M263 263H526V526H263V263Z" fill="#070707"/>
+<path d="M526 526H789V789H526V526Z" fill="#070707"/>
+<path d="M263 526H526V789H263V526Z" fill="#070707"/>
+<path d="M0 526H263V789H0V526Z" fill="#070707"/>
+</svg>

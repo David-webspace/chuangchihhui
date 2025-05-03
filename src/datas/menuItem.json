@@ -1,0 +1,76 @@
+[
+    {
+        "menu" : "作品",
+        "id": "artworks",
+        "url":"",
+        "sub": [
+            {
+                "menu": "國美館時期",
+                "root": "artworks",
+                "id": "museumNational",
+                "url": "museumNational"
+            },
+            {
+                "menu": "北美館時期",
+                "root": "artworks",
+                "id": "museumTaipei",
+                "url": "museumTaipei"
+            },
+            {
+                "menu": "區塊鏈系列",
+                "root": "artworks",
+                "id": "blockChain",
+                "url": "blockChain"
+            },
+            {
+                "menu": "無相之境",
+                "root": "artworks",
+                "id": "unXiangArea",
+                "url": "unXiangArea"
+            },
+            {
+                "menu": "各經典時期",
+                "root": "artworks",
+                "id": "classics",
+                "url": "classics"
+            },
+            {
+                "menu": "燈系列",
+                "root": "artworks",
+                "id": "light",
+                "url": "light"
+            },
+            {
+                "menu": "近代立體",
+                "root": "artworks",
+                "id": "modernStereo",
+                "url": "modernStereo"
+            },
+            {
+                "menu": "早期立體",
+                "root": "artworks",
+                "id": "earlyStereo",
+                "url": "earlyStereo"
+            }
+        ]
+    },
+    {
+        "menu" : "資歷",
+        "id": "experiences",
+        "url":"experiences",
+        "sub": []
+    },
+    {
+        "menu" : "藝評",
+        "id": "critics",
+        "url":"critics",
+        "sub": []
+    },
+    {
+        "menu" : "聯絡",
+        "id": "contacts",
+        "url":"contacts",
+        "sub": []
+        
+    }
+  ]

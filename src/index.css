@@ -1,0 +1,162 @@
+:root {
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #8C8383;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* variables */
+  --white: #fff;
+  --content-grey: rgba(0, 0, 0, 0.6);
+  --title-grey : rgba(0, 0, 0, 0.8);
+  --grey-1:#9f9f9f;
+  --grey-2: #c9c9c9;
+  --grey-3: #9a9a9a;
+  --grey-active: #383838;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+a {
+  font-weight: 500;
+  color: #878787;
+  text-decoration: inherit;
+  display: block;
+}
+
+a:hover {
+  color: var(--grey-active);
+}
+
+.imgActive:hover{
+  cursor: pointer;
+  transform: translateY(-3px);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.Container{
+  padding: 30px 180px;
+}
+
+.pd-xContainer{
+  padding: 0 255px;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 1.5;
+  font-weight: 400;
+  /* background-color: #9a9a9a; */
+}
+
+h3{
+  font-size: 20px;
+  font-weight: 400;
+}
+
+h4{
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing:3px;
+}
+
+h5{
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing:3px;
+}
+
+button{
+  width: fit-content;
+  display: inline;
+  padding: 6px 30px;
+  background-color: #e8e8e8;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  color: black;
+}
+
+.button{
+  width: fit-content;
+  display: inline;
+  padding: 6px 30px;
+  background-color: #e8e8e8;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  color: black;
+}
+
+button:hover{
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+select{
+  background-color: #fff;
+  color: #383838;
+}
+
+
+@media (max-width:1024px) {
+  .pd-xContainer{
+    padding: 0 120px;
+  }
+
+  .Container{
+    padding: 30px 140px;
+  }
+  
+}
+
+@media (max-width:768px) {
+  .pd-xContainer{
+    padding: 0 80px;
+  }
+
+  .Container{
+    padding: 30px 80px;
+  }
+  
+}
+
+@media (max-width:425px) {
+  .pd-xContainer{
+    padding: 0 20px;
+  }
+
+  .Container{
+    padding: 30px 20px;
+  }
+  
+}

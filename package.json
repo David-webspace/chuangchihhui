@@ -1,0 +1,47 @@
+{
+  "name": "chuangchihhui-galery-main",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "homepage": "http://chuangchihhui.com",
+  "keywords": ["莊志輝", "莊志輝藝術", "莊志輝藝術作品", "莊志輝藝術工作室", "Chuangchihhui", "Chuang Chih Hui", "莊志輝畫廊", "畫廊", "台灣藝術", "畫作購買", "藝術", "超現實", "超現實主義", "畫作", "展覽", "藝術家", "國家美術館", "區塊鏈", "藝術創作"],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "cp CNAME dist/ && gh-pages -d dist",
+    "deploy:staging": "echo 'staging.chuangchihhui.com' > dist/CNAME && gh-pages -d dist -b staging",
+    "deploy:prod": "echo 'chuangchihhui.com' > dist/CNAME && gh-pages -d dist -b main"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "ecpay_aio_nodejs": "^1.2.2",
+    "i18n": "^0.15.1",
+    "i18next": "^24.2.0",
+    "react": "^18.3.1",
+    "react-barcode": "^1.5.3",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^15.2.0",
+    "react-icon": "^1.0.0",
+    "react-icons": "^5.3.0",
+    "react-router": "^6.27.0",
+    "react-router-dom": "^6.27.0",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "gh-pages": "^6.2.0",
+    "globals": "^15.11.0",
+    "vite": "^5.4.10"
+  }
+}

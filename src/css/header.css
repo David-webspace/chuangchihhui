@@ -1,0 +1,246 @@
+.headerContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--white);
+    z-index: 50;
+}
+
+header{
+    max-width: 1960px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 80px;
+    background-color: var(--white);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+header a{
+    color: #000000;
+    font-weight: 900;
+}
+
+header ul ul li a{
+    color: #8C8383;
+    font-weight: 400;
+}
+
+.Logo{
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.Logo img{
+    height: 42%;
+}
+
+.defaultLogo{
+    display: none;
+}
+
+.menuItemActive{
+    transition: all 0.4s ease-in-out;
+}
+
+.menuContainer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.menuItemContainer{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.menuItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.submenuContainer {
+    position: absolute;
+    top: 100%;
+    width: 160px;
+    background-color: #fff;
+    flex-direction: column;
+}
+
+.submenuItem {
+    margin-top: 5px;
+    border-bottom: 1px solid var(--grey-1);
+    padding: 10px;
+}
+
+.submenuLink {
+    color: #000000; /* Default color for submenu items */
+    font-weight: 400;
+}
+
+.menuItemActive .submenuContainer {
+    display: block; /* Show submenu when parent menu is active */
+}
+
+.lngSelector{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    padding: 0 10px;
+}
+
+.lngSub{
+    width: 100px;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #d5d5d5;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+/* 漢堡按鈕樣式 */
+.hamburger {
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    z-index: 55;
+    cursor: pointer;
+    display: none;
+  }
+  
+/* 在小螢幕顯示漢堡按鈕 */
+@media (max-width: 1024px) {
+    header{
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 40%;
+        height: 100%;
+        flex-direction: column;
+        background-color: var(--grey-1);
+        padding: 20px 20px 20%;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    header a{
+        color: #ffffff;
+    }
+    
+    header ul ul li a{
+        color: #8C8383;
+    }
+
+    .defaultLogo{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0px;
+        padding: 10px 40px ;
+        background-color: var(--white);
+        width: 100%;
+    }
+
+    .Logo{
+        /* margin-bottom: 20px; */
+    }
+
+    header.header-open {
+        transform: translateX(-100%);
+        /* width: 500px; */
+    }
+
+    header.header-closed {
+        transform: translateX(0%);
+    }
+    
+    .menuContainer{
+        flex-direction: column;
+    }
+    
+    .menuItemContainer{
+        flex-direction: column;
+    }
+    
+    .menuItem{
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .menuItemContainer li{
+        width: 100%;
+        padding: 10px;
+        border-bottom: 1px solid #ffffff;
+    }
+
+    .submenuContainer {
+        width: 100%;
+        position: static;
+        background-color: transparent;
+    }
+    
+    .submenuItem {
+        margin-top: 5px;
+        border-bottom: 1px solid var(--black-0);
+        padding: 10px;
+    }
+    
+    .submenuLink {
+        color: #fff;
+        font-weight: 400;
+    }
+    
+    .menuItemActive .submenuContainer {
+        display: block; /* Show submenu when parent menu is active */
+    }
+
+    .lngSelector{
+        height: auto;
+        margin-right: 0px;
+        margin-bottom: 30px;
+        padding: 30px 30px;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+
+    .registerBtn{
+        width: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    header{
+        width: 360px;
+    }
+    
+    .defaultLogo{
+        padding: 10px 20px ;
+    }
+
+    .registerBtn{
+        width: 240px;
+    }
+}
+
+@media (max-width: 425px) {
+    header{
+        width: 100%;
+    }
+}

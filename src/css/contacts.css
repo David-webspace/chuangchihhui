@@ -1,0 +1,14 @@
+.contactTxtContainer{
+    height: 100%;
+    padding-top: 80px;
+}
+
+.mediaLink{
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 16px;
+    color: #979797;
+    margin-right: 10px;
+}
