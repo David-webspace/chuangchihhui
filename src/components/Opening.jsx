@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { FaChevronDown } from "react-icons/fa";
-import '../css/Opening.css'
+import '../css/opening.css'
 import { Link } from 'react-router-dom';
 
 const Opening = () => {
