@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/Homevideo.css'
+import '../css/homevideo.css'
 
 const Homevideo = () => {
   return (
