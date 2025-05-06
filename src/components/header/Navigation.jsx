@@ -1,8 +1,9 @@
 // src/components/Header/Navigation.jsx
 import { Link } from 'react-router-dom';
 import { FaAngleDown, FaAngleRight } from "react-icons/fa";
+import { getLocalizedPath } from '../../getLocalizedPath';
 
-const Navigation = ({ menuItems, activeMenuItem, onMenuSelect, t }) => {
+const Navigation = ({ menuItems, activeMenuItem, onMenuSelect, t, i18n }) => {
   return (
     <nav className="navigation">
       <ul className="menu-list">
@@ -13,7 +14,7 @@ const Navigation = ({ menuItems, activeMenuItem, onMenuSelect, t }) => {
             className="menu-item"
           >
             <Link
-              to={menu.url}
+              to={getLocalizedPath(menu.url, i18n.language)}
               className={`menu-link ${menu.id === activeMenuItem ? 'active' : ''}`}
             >
               {t(menu.menu)}
@@ -26,7 +27,7 @@ const Navigation = ({ menuItems, activeMenuItem, onMenuSelect, t }) => {
                 {menu.sub.map((sub, subIndex) => (
                   <li key={subIndex} className="submenu-item">
                     <Link
-                      to={`/portfolio/${sub.pathname}`}
+                      to={getLocalizedPath(`/portfolio/${sub.pathname}`, i18n.language)}
                       className="submenu-link"
                     >
                       {sub.text}

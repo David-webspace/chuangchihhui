@@ -1,5 +1,8 @@
 import React from 'react'
+import { useEffect } from 'react'
 import { useParams } from 'react-router'
+import '../i18n'
+import { useTranslation } from 'react-i18next'
 import critics from '../datas/critics.json'
 import criticsContent1 from '../datas/criticsContent/text01.json'
 import criticsContent2 from '../datas/criticsContent/text02.json'
@@ -84,8 +87,29 @@ const PaternCritics = () => {
 
 
 // 適用於客製化每個頁面
+  /**
+   * Page component for rendering the content of a critic.
+   *
+   * @param {Object} props The props of the component.
+   * @param {string} props.CriticsItem The identifier of the critic.
+   * @returns {ReactElement} The rendered component.
+   */
+
 const CriticsContent = () => {
     const { CriticsItem } = useParams()
+    const { t, i18n } = useTranslation() 
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng)
+    }
+    
+    useEffect(() => {
+    // Extract lang from the path, e.g., '/en/critics'
+    const pathParts = location.pathname.split('/');
+    const lang = pathParts[1]; // '' | 'en' | 'zh' | etc.
+    if (lang && (lang === 'en' || lang === 'zh')) {
+        i18n.changeLanguage(lang);
+    }
+    }, [location, i18n]);
 
       // 建立映射表
       const criticsMapping = {

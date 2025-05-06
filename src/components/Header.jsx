@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import '../css/header.css';
 import { FaBars, FaTimes } from "react-icons/fa"; // 漢堡按鈕和關閉按鈕
 import menuItems from '../datas/menuItem.json';
-import '../i18n';
+// Removed duplicate i18n import
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from './header/LanguageSelector';
+import { getLocalizedPath } from '../getLocalizedPath';
 
 const Header = () => {
     const ScreenWidth = window.innerWidth;
@@ -86,7 +87,7 @@ const Header = () => {
         return (
             <li key={index} onClick={handleMenuClick} className='pd-w-10 menuItem' >
                 <Link
-                    to={`${menu.url}`}
+                    to={getLocalizedPath(menu.url, i18n.language)}
                     className={`pd-10 db ${menu.id === menuItem ? 'menuItemActive' : ''}`}
                     style={{ color: `${menu.id === menuItem ? 'var(--green-1)' : ''}` }}
                 >
@@ -99,7 +100,7 @@ const Header = () => {
                         {menu.sub.map((subMenu, subIndex) => (
                             <li key={subIndex} className='submenuItem'>
                                 <Link
-                                    to={`/portfolio/${subMenu.url}`}
+                                    to={getLocalizedPath(`/portfolio/${subMenu.url}`, i18n.language)}
                                     className={`submenuLink ${subMenu.id === menuItem ? 'menuItemActive' : ''}`}
                                     style={{ color: `${subMenu.id === menuItem ? 'var(--green-1)' : ''}` }}
                                     onClick={() => { setOpenSubMenu(null); setIsHeaderOpen(false) }}
@@ -126,7 +127,7 @@ const Header = () => {
                 {isHeaderOpen ? <FaTimes size={30} color="#000" /> : <FaBars size={30} color="#000" />}
             </div>
 
-            <Link to='/' className='defaultLogo'>
+            <Link to={getLocalizedPath('/', i18n.language)} className='defaultLogo'>
                 <div className="Logo">
                 <img
                     src="https://live.staticflickr.com/65535/54137328621_14ed0a9d0d_c.jpg"
@@ -147,7 +148,7 @@ const Header = () => {
             >
                 <div className={`menuContainer ${location.pathname !== '/' ? 'df' : 'dn'}`}>
                     {/* Logo Container */}
-                    <Link to='/' className='Logo' style={{ marginRight: '0px' }}>
+                    <Link to={getLocalizedPath('/', i18n.language)} className='Logo' style={{ marginRight: '0px' }}>
                         <img
                             src="https://live.staticflickr.com/65535/54137328621_14ed0a9d0d_c.jpg"
                             alt=""

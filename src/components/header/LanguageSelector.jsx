@@ -28,8 +28,19 @@ const LanguageSelector = () => {
     const { t, i18n } = useTranslation();
     const [langActive, setLangActive] = useState(false);
 
+    // Switch language by changing the URL prefix
     const changeLanguage = (lng) => {
-        i18n.changeLanguage(lng);
+        const path = window.location.pathname;
+        const isEnglish = path.startsWith('/en');
+        let newPath = path;
+        if (lng === 'en' && !isEnglish) {
+            // Add /en prefix
+            newPath = '/en' + (path === '/' ? '' : path);
+        } else if (lng === 'ch' && isEnglish) {
+            // Remove /en prefix
+            newPath = path.replace(/^\/en/, '') || '/';
+        }
+        window.location.pathname = newPath;
         setLangActive(false);
     };
 

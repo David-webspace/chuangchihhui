@@ -40,6 +40,15 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
+    // Extract lang from the path, e.g., '/en/critics'
+    const pathParts = location.pathname.split('/');
+    const lang = pathParts[1]; // '' | 'en' | 'zh' | etc.
+    if (lang && (lang === 'en' || lang === 'zh')) {
+      i18n.changeLanguage(lang);
+    }
+  }, [location, i18n]);
+
+  useEffect(() => {
       if (location.hash) {
           const element = document.querySelector(location.hash);
           if (element) {
@@ -80,6 +89,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/:lang/' element={<Home />} />
         <Route path='/:MenuItem/'/>
 
         {/* Header Menu Navigation Bar Component */}
@@ -87,7 +97,9 @@ function App() {
         {/* <Route path='/portfolio/:Classics' element={<Portfolio artworks={artworks}/>} />
         <Route path='/portfolio/:graphics' element={<Portfolio artworks={artworks}/>} />
         <Route path='/portfolio/:threeD' element={<Portfolio artworks={artworks}/>} /> */}
+        
         <Route path='/events' element={<Events />}/>
+        <Route path='/:lang/events' element={<Events />}/>
         <Route 
           path='/experiences'
           element={
@@ -95,17 +107,31 @@ function App() {
               exhibition={exhibition}
               competition={competition}
               archive={archive}
-            />}/>
+            />
+          }
+        />
+        <Route 
+          path='/:lang/experiences'
+          element={
+            <Experiences
+              exhibition={exhibition}
+              competition={competition}
+              archive={archive}
+            />
+          }
+        />
 
         {/* Critics */}
         <Route path='/critics' element={<Critics />} />
-        <Route
-          path='/critics/:CriticsItem'
-          element={<CriticsContent/>}
-        />
+        <Route path='/critics/:CriticsItem' element={<CriticsContent/>}/>
+        {/* Multilingual Critics */}
+        <Route path='/:lang/critics' element={<Critics />} />
+        <Route path='/:lang/critics/:CriticsItem' element={<CriticsContent />} />
 
         <Route path='/collections' element={<Collections/>} />
+        <Route path='/:lang/collections' element={<Collections/>} />
         <Route path='/contacts' element={<Contacts />} />
+        <Route path='/:lang/contacts' element={<Contacts />} />
 
         {/* Artworks */}
         <Route path='/portfolio/artworks/:ArtworkID' element={<Artworks artworks={artworks} mainArtwork={{}}/>} />
@@ -126,6 +152,15 @@ function App() {
         <Route path='/portfolio/light' element={<LightSeries />}/>
         <Route path='/portfolio/modernStereo' element={<ModernStereo />}/>
         <Route path='/portfolio/earlyStereo' element={<EarlyStereo />}/>
+        {/* English version Series */}
+        <Route path='/:lang/portfolio/museumNational' element={<MuseumNational />}/>
+        <Route path='/:lang/portfolio/museumTaipei' element={<MuseumTaipei />}/>
+        <Route path='/:lang/portfolio/blockChain' element={<BlockChain />}/>
+        <Route path='/:lang/portfolio/unXiangArea' element={<NoXiangFeild />}/>
+        <Route path='/:lang/portfolio/classics' element={<Classics />}/>
+        <Route path='/:lang/portfolio/light' element={<LightSeries />}/>
+        <Route path='/:lang/portfolio/modernStereo' element={<ModernStereo />}/>
+        <Route path='/:lang/portfolio/earlyStereo' element={<EarlyStereo />}/>
 
         <Route path='/portfolio/all' element={<AllArt />}/>
 
