@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import '../css/artworkPage.css';
 
 const ArtworkDetails = ({ artwork }) => {
     return (
-        <div className='df fd-c jc-c' style={{width:'30%'}}>
+        <div className='df fd-c jc-c artworkDetail'>
             <h3 className='mg-b-30'>{artwork.name}</h3>
             <ul className='mg-b-30'>
             {[
@@ -91,19 +92,19 @@ const SimilarArtworks = ({ artworks, currentArtworkId }) => {
     return (
         <div>
             <h3 className='mg-b-30'>相似作品</h3>
-            <div className='df fl-wp'>
+            <div className='similarArtworkContainer'>
                 {currentArtwork.similarArt.map((similarId, index) => {
                     
                     const similarArtwork = artworks[similarId - 1];
                     if (!similarArtwork) return null;
 
                     return (
-                        <div key={index} className='mg-b-30' style={{height:'160px'}}>
+                        <div key={index} className='mg-b-30 similarArtworkItem' style={{height:'160px'}}>
                             <Link to={`/portfolio/artworks/${similarArtwork.id}`} style={{height:"100%"}}>
                                 <img
                                     src={similarArtwork.thumbnail} 
                                     alt={similarArtwork.alt}
-                                    className='bx-sd-sm fh mg-r-50 imgActive trans-2'
+                                    className='bx-sd-sm fh imgActive trans-2'
                                     style={{height:"100%"}}
                                 />
                             </Link>

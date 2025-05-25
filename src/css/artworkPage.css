@@ -1,0 +1,41 @@
+.artworkDetail{
+    width: 30%;
+}
+
+.similarArtworkContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.similarArtworkItem{
+    width: 22%;
+}
+
+@media screen and (max-width: 1024px) {
+    .artworkDetail{
+        width: 100%;
+    }
+
+    .similarArtworkContainer{
+        justify-content: space-between;
+    }
+    
+    .similarArtworkItem{
+        width: 22%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .artworkDetail{
+        width: 100%;
+    }
+
+    .similarArtworkContainer{
+        justify-content: space-between;
+    }
+    
+    .similarArtworkItem{
+        width: 48%;
+    }
+}
+    
