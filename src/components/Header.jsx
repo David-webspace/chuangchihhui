@@ -89,7 +89,7 @@ const Header = () => {
                 <Link
                     to={getLocalizedPath(menu.url, i18n.language)}
                     className={`pd-10 db ${menu.id === menuItem ? 'menuItemActive' : ''}`}
-                    style={{ color: `${menu.id === menuItem ? 'black' : 'var(--grey-1)'}` }}
+                    style={{ color: `${menu.id === menuItem ? 'black' : ''}` }}
                 >
                     {t(menu.menu)}
                 </Link>
