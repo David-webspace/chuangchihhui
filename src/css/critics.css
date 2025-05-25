@@ -1,0 +1,32 @@
+.criticCard{
+    margin-bottom: 420px;
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.criticCard a{
+    display: flex;
+}
+
+.crticsThumbnail{
+    width: 40%;
+    margin-right: 50px;
+    position: relative;
+}
+
+@media screen and (max-width: 425px) {
+    .criticCard{
+        /* height: 150px; */
+        overflow: visible;
+    }
+
+    .criticCard a{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .crticsThumbnail{
+        width: 100%;
+    }
+}

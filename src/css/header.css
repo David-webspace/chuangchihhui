@@ -155,13 +155,8 @@ header ul ul li a{
         width: 100%;
     }
 
-    .Logo{
-        /* margin-bottom: 20px; */
-    }
-
     header.header-open {
         transform: translateX(-100%);
-        /* width: 500px; */
     }
 
     header.header-closed {
@@ -209,11 +204,20 @@ header ul ul li a{
         display: block; /* Show submenu when parent menu is active */
     }
 
+    .lngContainer{
+        padding: 30px 200px;
+    }
+
     .lngSelector{
+        width: 100%;
         height: auto;
         margin-right: 0px;
-        margin-bottom: 30px;
-        padding: 30px 30px;
+        margin-bottom: 200px;
+        padding: 30px 100px;
+    }
+
+    .lngSub{
+        width: 300px;
     }
     
     .hamburger {
@@ -240,6 +244,17 @@ header ul ul li a{
 }
 
 @media (max-width: 425px) {
+    .lngSelector{
+        width: 100%;
+        height: auto;
+        margin-right: 0px;
+        margin-bottom: 300px;
+        padding: 30px 100px;
+    }
+
+    .lngSub{
+        width: 300px;
+    }
     header{
         width: 100%;
     }

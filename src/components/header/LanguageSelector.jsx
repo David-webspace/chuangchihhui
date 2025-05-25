@@ -58,8 +58,8 @@ const LanguageSelector = () => {
             style={{ position: 'relative' }}
             className='lngSelector'
         >
-        <div onClick={handleLanguageSelect} className='df jc-ca aln-itm-c'>
-            <RiEarthFill size={20} />
+        <div onClick={handleLanguageSelect} className='df jc-ca aln-itm-c lngContainer'>
+            <RiEarthFill size={30} />
         </div>
         <ul
             className='df fd-c'

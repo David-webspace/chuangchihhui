@@ -26,7 +26,7 @@ const Homevideo = () => {
         <hr style={{ margin: '40px 0', borderColor: '#ccc' }} />
 
         <div style={{ marginTop: '30px', textAlign: 'center' }}>
-          <h3>關於藝術家</h3>
+          <h3 className='mg-b-10'>關於藝術家</h3>
           <p style={{ fontSize: '16px', color: '#555', maxWidth: '600px', margin: '0 auto' }}>
             藝術家 莊志輝 擅長以獨特的視角捕捉生活的細節，並透過創作表達情感與故事。
             他的作品融合了現代與傳統元素，深受觀眾喜愛。
@@ -34,11 +34,11 @@ const Homevideo = () => {
         </div>
 
         {/* 推薦內容 */}
-        <div style={{ marginTop: '40px', textAlign: 'center' }}>
+        <div style={{ marginTop: '50px', textAlign: 'center' }}>
           <h3>推薦內容</h3>
           <div className="df jc-c fl-wp">
             <a style={{ width: '400px', height:"400px",margin: '10px', display:"block", overflow:"hidden"}} href='https://www.asiafitnesstoday.com/in-the-mind-of-artist-chih-hui-chuang-taiwan/'>
-                <img src="https://www.asiafitnesstoday.com/wp-content/uploads/Chuang-Chih-Hui.jpg" alt="image" style={{height:"80%"}}/>
+                <img src="https://live.staticflickr.com/65535/54442861734_8986536930.jpg" alt="image" style={{height:"80%"}}/>
                 {/* <iframe
                     width="360"
                     height="202.5" 

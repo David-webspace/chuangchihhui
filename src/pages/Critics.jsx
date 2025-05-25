@@ -14,12 +14,19 @@ const SCREEN_BREAKPOINTS = {
 };
 
 const CriticCard = ({ critic, width, visibleSection }) => (
-  <div className="mg-b-50" style={{ position: 'relative', height:"200px", overflow:"hidden" }}>
-    <Link to={`${visibleSection==='critics' ? `/critics/${critic.id}` : `${critic.url}`}`} target={`${visibleSection==='report' ? '_blank' : ''}`} className='df'>
-      <div className="fw mg-r-50" style={{ position: 'relative', width:"40%" }}>
+  <div className="criticCard">
+    <Link 
+      to={`${
+        visibleSection==='critics' ? 
+        `/critics/${critic.id}` : 
+        `${critic.url}`
+      }`}
+      target={`${visibleSection==='report' ? '_blank' : ''}`}
+    >
+      <div className="crticsThumbnail">
         <img src={critic.bg} alt={critic.title} className="fw" />
       </div>
-      <div style={{width:"60%"}}>
+      <div style={{width:"100%"}}>
         <h3 style={{color:"var(--title-grey)"}} className="mg-b-20">{critic.title}</h3>
         <h4 className='mg-b-5'>{critic.concept}</h4>
         <h4 style={{display: `${visibleSection==='critics' ? '' : 'none'}`}} className='mg-b-5'>{critic.author}</h4>
@@ -86,7 +93,6 @@ const TabButton = ({ label, isActive, onClick, screenWidth }) => {
       onClick={onClick}
       style={{
         ...getTabStyles(),
-        // borderBottom: isActive ? '2px solid #000' : 'none',
         textAlign: screenWidth < 425 ? 'center' : 'center', // Center text on mobile｀
         flex: screenWidth < 425 ? '1 1 45%' : 'none', // Equal width on mobile
       }}
@@ -104,12 +110,6 @@ const ResponsiveCriticsList = ({ critics, screenWidth, visibleSection }) => {
     return `${baseClasses} jc-sb fl-wp`;
   };
 
-  const getCardWidth = () => {
-    if (screenWidth < 425) return '100%';  // mobile
-    if (screenWidth < 768) return '50%';   // small tablet
-    return '100%';                         // tablet & desktop
-  };
-
   return (
     <div className={getResponsiveStyles()}>
       {critics.map((critic, index) => {
@@ -118,7 +118,7 @@ const ResponsiveCriticsList = ({ critics, screenWidth, visibleSection }) => {
         );
 
         return (
-          <div key={index} className={`${isVisible ? 'df' : 'dn'}`} style={{width:getCardWidth()}}>
+          <div key={index} className={`${isVisible ? 'df' : 'dn'}`} style={{width:"100%"}}>
             <CriticCard critic={critic} width={"100%"} visibleSection={visibleSection}/>
           </div>
         );
