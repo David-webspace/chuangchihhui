@@ -37,7 +37,11 @@ const Homevideo = () => {
         <div style={{ marginTop: '50px', textAlign: 'center' }}>
           <h3>推薦內容</h3>
           <div className="df jc-c fl-wp">
-            <a style={{ width: '400px', height:"400px",margin: '10px', display:"block", overflow:"hidden"}} href='https://www.asiafitnesstoday.com/in-the-mind-of-artist-chih-hui-chuang-taiwan/'>
+            <a
+              href='https://www.asiafitnesstoday.com/in-the-mind-of-artist-chih-hui-chuang-taiwan/'
+              target="_blank"
+              style={{ width: '400px', height:"400px",margin: '10px', display:"block", overflow:"hidden"}}
+              >
                 <img src="https://live.staticflickr.com/65535/54442861734_8986536930.jpg" alt="image" style={{height:"80%"}}/>
                 {/* <iframe
                     width="360"
@@ -51,7 +55,11 @@ const Homevideo = () => {
                 </iframe> */}
               <p>作品名稱：光影之舞</p>
             </a>
-            <a style={{ width: '400px', height:"400px",margin: '10px', display:"block", overflow:"hidden" }} href='https://news.ltn.com.tw/news/life/breakingnews/1549408'>
+            <a
+              href='https://news.ltn.com.tw/news/life/breakingnews/1549408'
+              target="_blank"
+              style={{ width: '400px', height:"400px",margin: '10px', display:"block", overflow:"hidden" }}
+            >
                 <img src="https://img.ltn.com.tw/Upload/news/600/2015/12/23/1549408_3.jpg" alt="image" style={{height:"80%"}}/>
                 {/* <iframe 
                     width="360" 

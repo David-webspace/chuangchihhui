@@ -59,7 +59,7 @@ const LanguageSelector = () => {
             className='lngSelector'
         >
         <div onClick={handleLanguageSelect} className='df jc-ca aln-itm-c lngContainer'>
-            <RiEarthFill size={30} />
+            <RiEarthFill size={30} color='var(--white)'/>
         </div>
         <ul
             className='df fd-c'
