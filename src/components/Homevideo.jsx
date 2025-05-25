@@ -35,7 +35,7 @@ const Homevideo = () => {
 
         {/* 推薦內容 */}
         <div style={{ marginTop: '50px', textAlign: 'center' }}>
-          <h3>推薦內容</h3>
+          <h3 className='mg-b-20'>推薦內容</h3>
           <div className="df jc-c fl-wp">
             <a
               href='https://www.asiafitnesstoday.com/in-the-mind-of-artist-chih-hui-chuang-taiwan/'
