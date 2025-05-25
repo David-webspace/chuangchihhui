@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import critics_item from '../datas/critics.json';
 import report from '../datas/reports.json';
 import '../css/critics.css'
-import { FaWeight } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
 const SCREEN_BREAKPOINTS = {

@@ -1,5 +1,5 @@
 .criticCard{
-    margin-bottom: 420px;
+    margin-bottom: 50px;
     position: relative;
     height: 200px;
     overflow: hidden;
@@ -17,7 +17,7 @@
 
 @media screen and (max-width: 425px) {
     .criticCard{
-        /* height: 150px; */
+        margin-bottom: 360px;
         overflow: visible;
     }
 
