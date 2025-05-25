@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import artworks from '../../datas/artworks.json'
 import { useTranslation } from 'react-i18next';
 import '../../i18n';
+import '../../css/artworkPeriod.css';
+
 const ModernStereo = () => {
 
   const ScreenWidth = window.innerWidth
@@ -12,7 +14,7 @@ const ModernStereo = () => {
     if (!artwork) return null;
 
     return(
-      <div style={{width:"22%", marginBottom:"100px", position:"relative"}}>
+      <div style={{position:"relative"}} className='artworkPeriodItem'>
         <Link to={`/portfolio/artworks/${artwork.id}`} style={{height:"100%"}}>
           <img
             src={artworks[img_Id].thumbnail} alt="" 
@@ -35,7 +37,7 @@ const ModernStereo = () => {
   
 
   return (
-    <div className={`${(1024<=ScreenWidth && ScreenWidth < 1960) ? '' : 'dn'} pd-xContainer`}>
+    <div className={`pd-xContainer`}>
       <h3 className='periodTitle' style={{marginBottom:'160px'}}>{t('近代立體')}</h3>
       <div className='df jc-sb fl-wp'>
         {imgRender(119)}

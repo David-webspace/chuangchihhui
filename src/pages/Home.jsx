@@ -33,20 +33,8 @@ const ArtworkThumbnail = ({ artwork, screenWidth }) => {
   }
   const { t, i18n } = useTranslation();
 
-  const getArtworkStyles = () => {
-    if (screenWidth < SCREEN_BREAKPOINTS.TABLET_SMALL.min) { // Mobile
-      return { width: "100%", marginBottom: "40px" };
-    } else if (screenWidth < SCREEN_BREAKPOINTS.TABLET.min) { // Small Tablet
-      return { width: "48%", marginBottom: "60px" };
-    } else if (screenWidth < SCREEN_BREAKPOINTS.DESKTOP.min) { // Tablet
-      return { width: "31%", marginBottom: "80px" };
-    } else { // Desktop
-      return { width: "22%", marginBottom: "100px" };
-    }
-  };
-
   return (
-    <div style={{ ...getArtworkStyles(), position: "relative" }} className='artworkItem'>
+    <div style={{position: "relative" }} className='artworkItem'>
       <Link to={`/portfolio/${artwork.series}`} style={{height:"100%"}}>
         <img
           src={artwork.thumbnail}
@@ -107,23 +95,13 @@ const Home = () => {
     });
   };
 
-  const getResponsiveLinks = () => {
-    if (screenWidth >= SCREEN_BREAKPOINTS.DESKTOP.min && screenWidth < SCREEN_BREAKPOINTS.DESKTOP.max) {
-      return <SocialLinks isMobile={false} />;
-    }
-    if (screenWidth >= SCREEN_BREAKPOINTS.TABLET_SMALL.min && screenWidth < SCREEN_BREAKPOINTS.DESKTOP.min) {
-      return <SocialLinks isMobile={true} />;
-    }
-    return null;
-  };
-
   return (
     <div>
       <Opening />
 
       <div
         id='homeExplore'
-        style={{marginTop:`${ screenWidth<425 ? '100px' : '100px'}`}}
+        style={{marginTop:`${ screenWidth<=425 ? '40px' : '100px'}`}}
         className="df jc-c homeArtworks"
       >
         <div className="artworks">
@@ -134,9 +112,6 @@ const Home = () => {
       {/* <Preface listings={preface_text} /> */}
       
       <Homevideo />
-
-
-      {/* {getResponsiveLinks()} */}
 
     </div>
   );

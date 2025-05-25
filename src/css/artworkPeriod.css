@@ -1,0 +1,12 @@
+.artworkPeriodItem{
+    width: 22%;
+    margin-bottom: 100px;
+}
+
+@media screen and (max-width: 425px) {
+    .artworkPeriodItem{
+        width: 48%;
+        margin-bottom: 60px;
+    }
+}
+    

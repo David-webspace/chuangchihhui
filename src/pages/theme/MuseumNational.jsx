@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
-// import thumbnails from '../../datas/thumbnails.json'
 import artworks from '../../datas/artworks.json'
 import { useTranslation } from 'react-i18next';
 import '../../i18n';
+import '../../css/artworkPeriod.css';
+
 const MuseumNational = () => {
 
   const ScreenWidth = window.innerWidth
@@ -13,7 +14,7 @@ const MuseumNational = () => {
     if (!artwork) return null;
 
     return(
-      <div style={{width:"22%", marginBottom:"100px", position:"relative"}}>
+      <div style={{position:"relative"}} className='artworkPeriodItem'>
         <Link to={`/portfolio/artworks/${artwork.id}`} style={{height:"100%"}}>
           <img
             src={artworks[img_Id].thumbnail} alt="" 
@@ -32,7 +33,7 @@ const MuseumNational = () => {
   }
 
   return (
-    <div className={`${(1024<=ScreenWidth && ScreenWidth < 1960) ? '' : 'dn'} pd-xContainer`}>
+    <div className={`pd-xContainer`}>
       <h3 className='periodTitle' style={{marginBottom:'160px'}}>{t('國美館時期')}</h3>
       <div className='df jc-sb fl-wp'>
         {imgRender(24)}
