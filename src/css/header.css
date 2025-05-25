@@ -22,11 +22,11 @@ header{
 
 header a{
     color: #000000;
-    font-weight: 900;
+    font-weight: 400;
 }
 
 header ul ul li a{
-    color: #8C8383;
+    color:rgb(0, 0, 0);
     font-weight: 400;
 }
 
@@ -46,6 +46,7 @@ header ul ul li a{
 
 .menuItemActive{
     transition: all 0.4s ease-in-out;
+    font-weight: 900;
 }
 
 .menuContainer{
@@ -68,6 +69,10 @@ header ul ul li a{
     align-items: center;
     height: 100%;
     position: relative;
+}
+
+.menuItem a{
+    font-weight: 400;
 }
 
 .submenuContainer {

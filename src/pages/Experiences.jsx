@@ -12,7 +12,7 @@ const Experiences = ({ exhibition = [], competition = [], archive = [] }) => {
     return(
       <div key={index} className='df mg-list' style={{color:'var(--content-grey)'}}>
         <h4 style={{width:'80px'}}>{t(item.year)}</h4>
-        <h4>{t(item.exhibition)}</h4>
+        <h4 style={{width:'100%'}}>{t(item.exhibition)}</h4>
       </div>
     )
   })
@@ -21,7 +21,7 @@ const Experiences = ({ exhibition = [], competition = [], archive = [] }) => {
     return(
       <div key={index} className='df mg-list' style={{color:'var(--content-grey)'}}>
         <h4 className='' style={{width:'80px'}}>{item.year}</h4>
-        <h4>{item.competition}</h4>
+        <h4 style={{width:'100%'}}>{item.competition}</h4>
       </div>
     )
   })
