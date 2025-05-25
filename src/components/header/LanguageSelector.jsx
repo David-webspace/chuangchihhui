@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 const LanguageSelector = () => {
     
+    const ScreenWidth = window.innerWidth;
     const [lngSubClose, setLngSubClose] = useState(false);
     const languageSelectorRef = useRef(null); // Add this ref
 
@@ -59,7 +60,7 @@ const LanguageSelector = () => {
             className='lngSelector'
         >
         <div onClick={handleLanguageSelect} className='df jc-ca aln-itm-c lngContainer'>
-            <RiEarthFill size={30} color='var(--white)'/>
+            <RiEarthFill size={30} color={ScreenWidth <= 1024 ? 'var(--white)' : 'var(--black)'}/>
         </div>
         <ul
             className='df fd-c'
