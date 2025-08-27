@@ -166,7 +166,7 @@ const Header = () => {
 
                 {/* Language Select */}
                 <LanguageSelector />
-                <LanguageSelector />
+                
 
             </header>
         </div>
