@@ -1,7 +1,10 @@
 import React from 'react'
 import '../css/homevideo.css'
+import { useTranslation } from 'react-i18next'
 
 const Homevideo = () => {
+    const { t, i18n } = useTranslation()
+  
   return (
     <div className="">
 
@@ -63,16 +66,16 @@ const Homevideo = () => {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: '20px' }}>
-          <p>想了解更多？查看以下資源：</p>
+          <p>{t('想了解更多？查看以下資源：')}</p>
           <ul className='' style={{ listStyleType: 'none', padding: 0 }}>
             <li>
               <a href="https://maps.app.goo.gl/A4tttWxRBfXKYTRf8" target="_blank" rel="noopener noreferrer" className='dib pd-10'>
-                新竹市東區學府路19號
+                {t('新竹市東區學府路19號')}
               </a>
             </li>
             <li>
               <a href="https://www.facebook.com/search/top/?q=%E8%8E%8A%E5%BF%97%E8%BC%9D%E8%97%9D%E8%A1%93%E5%89%B5%E4%BD%9C%E5%B7%A5%E4%BD%9C%E5%AE%A4" target="_blank" rel="noopener noreferrer">
-                莊志輝藝術創作工作室
+                {t('莊志輝藝術創作工作室')}
               </a>
             </li>
           </ul>

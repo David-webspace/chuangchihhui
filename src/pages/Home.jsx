@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Preface from '../components/Preface';
 import Opening from '../components/Opening';
-import preface_text from '../datas/preface_text.json';
 import artworks from '../datas/artworks.json';
 import { Link } from 'react-router-dom';
 import '../i18n';
@@ -43,10 +41,10 @@ const ArtworkThumbnail = ({ artwork, screenWidth }) => {
           style={{ width: "100%", height: "100%" }}
         />
         <div className="thumbnailMask">
-          <h4 style={{ 
+          <h4 style={{
             fontSize:
-              screenWidth < SCREEN_BREAKPOINTS.TABLET_SMALL.min ? '14px' : 
-              screenWidth < SCREEN_BREAKPOINTS.TABLET.min ? '16px' : '18px' 
+              screenWidth < SCREEN_BREAKPOINTS.TABLET_SMALL.min ? '14px' :
+              screenWidth < SCREEN_BREAKPOINTS.TABLET.min ? '16px' : '18px'
           }}>
             {t(artwork.tag)}
           </h4>
