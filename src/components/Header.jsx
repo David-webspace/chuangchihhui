@@ -50,17 +50,22 @@ const Header = () => {
         if(
             menuRef.current &&
             !menuRef.current.contains(event.target) &&
-            !event.target.closest('.subMenuLink')
+            !event.target.closest('.subMenuLink') &&
+            !event.target.closest('.headerContainer') &&
+            !event.target.closest('.lngSelector') // 點擊 .lngSelector 不關閉選單
         ){
             setMenuItem(null);
             setOpenSubMenu(null);
+            setIsHeaderOpen(false);
         }
         };
 
         document.addEventListener('mousedown', handleClickOutside);
-
+        document.addEventListener('touchstart', handleClickOutside);
+        
         return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('touchstart', handleClickOutside);
         };
     }, []);
 
@@ -121,6 +126,21 @@ const Header = () => {
 
     return (
         <div className='headerContainer'>
+            {/* 遮罩，僅在 1024px 以下且選單開啟時顯示
+            {isHeaderOpen && window.innerWidth <= 1024 && (
+                <div
+                    style={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        width: '100vw',
+                        height: '100vh',
+                        background: 'rgba(0,0,0,0.01)',
+                        zIndex: 40
+                    }}
+                    onClick={() => setIsHeaderOpen(false)}
+                />
+            )} */}
             {/* 漢堡按鈕 */}
             <div className="hamburger" onClick={toggleHeader}>
                 {isHeaderOpen ? <FaTimes size={30} color="#000" /> : <FaBars size={30} color="#000" />}
@@ -164,8 +184,6 @@ const Header = () => {
 
                 {/* Language Select */}
                 <LanguageSelector />
-                
-
             </header>
         </div>
     );

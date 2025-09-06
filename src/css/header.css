@@ -137,8 +137,9 @@ header ul ul li a{
         width: 40%;
         height: 100%;
         flex-direction: column;
+        justify-content: start;
         background-color: var(--grey-1);
-        padding: 20px 20px 20%;
+        padding: 20px 20px;
         transition: transform 0.3s ease-in-out;
     }
     
@@ -162,6 +163,8 @@ header ul ul li a{
 
     header.header-open {
         transform: translateX(-100%);
+        overflow-y: auto;
+        max-height: 100vh;
     }
 
     header.header-closed {
@@ -170,6 +173,9 @@ header ul ul li a{
     
     .menuContainer{
         flex-direction: column;
+        overflow-y: auto;
+        max-height: 100vh;
+        height: auto;
     }
     
     .menuItemContainer{
@@ -217,7 +223,7 @@ header ul ul li a{
         width: 100%;
         height: auto;
         margin-right: 0px;
-        margin-bottom: 200px;
+        /* margin-bottom: 200px; */
         padding: 30px 100px;
     }
 
@@ -236,7 +242,7 @@ header ul ul li a{
 
 @media (max-width: 768px) {
     header{
-        width: 360px;
+        width: 50%;
     }
     
     .defaultLogo{
@@ -249,18 +255,19 @@ header ul ul li a{
 }
 
 @media (max-width: 425px) {
+    header{
+        width: 50%;
+    }
+
     .lngSelector{
         width: 100%;
         height: auto;
         margin-right: 0px;
-        margin-bottom: 300px;
+        margin-bottom: 10px;
         padding: 30px 100px;
     }
 
     .lngSub{
         width: 300px;
-    }
-    header{
-        width: 100%;
     }
 }
