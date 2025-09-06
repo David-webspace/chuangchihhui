@@ -84,14 +84,14 @@ header ul ul li a{
 }
 
 .submenuItem {
-    margin-top: 5px;
+    /* margin-top: 5px; */
     border-bottom: 1px solid var(--grey-1);
-    padding: 10px;
 }
 
 .submenuLink {
     color: #000000; /* Default color for submenu items */
     font-weight: 400;
+    padding: 20px 10px;
 }
 
 .menuItemActive .submenuContainer {

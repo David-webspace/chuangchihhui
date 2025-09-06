@@ -135,6 +135,7 @@ function App() {
 
         {/* Artworks */}
         <Route path='/portfolio/artworks/:ArtworkID' element={<Artworks artworks={artworks} mainArtwork={{}}/>} />
+        <Route path='/:lang/portfolio/artworks/:ArtworkID' element={<Artworks artworks={artworks} mainArtwork={{}}/>} />
 
         {/* Period */}
         {/* <Route path='/portfolio/periods/:Period' element={<ArtworkPeriods artworks={artworks}/>} />

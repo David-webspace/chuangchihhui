@@ -2,15 +2,18 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import '../css/artworkPage.css';
 
+import { useTranslation } from 'react-i18next';
+
 const ArtworkDetails = ({ artwork }) => {
+    const { i18n } = useTranslation();
     return (
         <div className='df fd-c jc-c artworkDetail'>
-            <h3 className='mg-b-30'>{artwork.name}</h3>
+            <h3 className='mg-b-30'>{i18n.language === 'en' && artwork.enName ? artwork.enName : artwork.name}</h3>
             <ul className='mg-b-30'>
             {[
-                { label: '尺寸', value: artwork.size },
-                { label: '媒材', value: artwork.mediums },
-                { label: '年份', value: artwork.year }
+                { label: i18n.language === 'en' ? 'Size' : '尺寸', value: artwork.size },
+                { label: i18n.language === 'en' ? 'Medium' : '媒材', value: artwork.mediums },
+                { label: i18n.language === 'en' ? 'Year' : '年份', value: artwork.year }
             ].map(({ label, value }) => (
                 <span key={label} className='df'>
                     <li className='mg-b-5'>{label}：</li>
@@ -81,17 +84,19 @@ const SimilarArtworks = ({ artworks, currentArtworkId }) => {
     
     // Check if there are no similar artworks
     if (!currentArtwork.similarArt || currentArtwork.similarArt.length === 0) {
+        const { i18n } = useTranslation();
         return (
             <div>
-                <h3 className='mg-b-30'>相似作品</h3>
-                <h4 style={{color:"var(--grey-2)"}}>暫無相似作品</h4>
+                <h3 className='mg-b-30'>{i18n.language === 'en' ? 'Similar Artworks' : '相似作品'}</h3>
+                <h4 style={{color:"var(--grey-2)"}}>{i18n.language === 'en' ? 'No similar artworks' : '暫無相似作品'}</h4>
             </div>
         );
     }
 
+    const { i18n } = useTranslation();
     return (
         <div>
-            <h3 className='mg-b-30'>相似作品</h3>
+            <h3 className='mg-b-30'>{i18n.language === 'en' ? 'Similar Artworks' : '相似作品'}</h3>
             <div className='similarArtworkContainer'>
                 {currentArtwork.similarArt.map((similarId, index) => {
                     

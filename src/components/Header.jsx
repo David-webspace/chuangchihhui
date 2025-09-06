@@ -53,6 +53,7 @@ const Header = () => {
             !event.target.closest('.subMenuLink')
         ){
             setMenuItem(null);
+            setOpenSubMenu(null);
         }
         };
 
@@ -65,7 +66,6 @@ const Header = () => {
 
     // ==================== Language Select ====================
     const { t, i18n } = useTranslation();
-    const [langActive, setLangActive] = useState(false);
 
     // ==================== menuItemRender ====================
     const menuItemRender = menuItems.map((menu, index) => {
@@ -77,7 +77,6 @@ const Header = () => {
             setOpenSubMenu(menu.id === openSubMenu ? null : menu.id);
     
             if (menu.sub.length > 0 && ScreenWidth <= 1024) {
-                // setOpenSubMenu(menu.id === openSubMenu ? null : menu.id);
                 console.log(isHeaderOpen)
             }else{
                 setIsHeaderOpen(false)
@@ -144,7 +143,6 @@ const Header = () => {
             {/* Header */}
             <header
                 className={`${isHeaderOpen ? 'header-open' : 'header-closed'}`}
-                // onClick={() => setIsHeaderOpen(false)}
             >
                 <div className={`menuContainer ${location.pathname !== '/' ? 'df' : 'dn'}`}>
                     {/* Logo Container */}

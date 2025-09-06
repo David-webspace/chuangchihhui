@@ -27,9 +27,15 @@ const Homevideo = () => {
 
         <div style={{ marginTop: '30px', textAlign: 'center' }}>
           <h3 className='mg-b-10'>關於藝術家</h3>
-          <p style={{ fontSize: '16px', color: '#555', maxWidth: '600px', margin: '0 auto' }}>
-            藝術家 莊志輝 擅長以獨特的視角捕捉生活的細節，並透過創作表達情感與故事。
-            他的作品融合了現代與傳統元素，深受觀眾喜愛。
+          <p style={{ lineHeight: '3', fontSize: '16px', color: '#555', maxWidth: '600px', margin: '0 auto' }}>
+            我的作品<br/>
+            起草創作 像要誕生的嬰兒<br/>
+            創作時 像充滿慾望的青少年<br/>
+            完成時 宛如追求完美的中年<br/>
+            展出時 如同過往的先人<br/>
+            讓人品頭論足<br/>
+            人總是在八卦是非中<br/>
+            找尋一點自性的空間
           </p>
         </div>
 
@@ -38,40 +44,20 @@ const Homevideo = () => {
           <h3 className='mg-b-20'>推薦內容</h3>
           <div className="df jc-c fl-wp">
             <a
-              href='https://www.asiafitnesstoday.com/in-the-mind-of-artist-chih-hui-chuang-taiwan/'
+              href='/critics/1'
               target="_blank"
               style={{ width: '400px', height:"400px",margin: '10px', display:"block", overflow:"hidden"}}
               >
-                <img src="https://live.staticflickr.com/65535/54442861734_8986536930.jpg" alt="image" style={{height:"80%"}}/>
-                {/* <iframe
-                    width="360"
-                    height="202.5" 
-                    src="https://www.youtube.com/embed/aSooyTSjAh8?si=hTkTh6XpSOuULDdd"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    allowfullscreen>
-                </iframe> */}
-              <p>作品名稱：光影之舞</p>
+                <img src="https://live.staticflickr.com/65535/54442665986_788ceb4ff6_w.jpg" alt="image" style={{height:"80%"}}/>
+                <p>從外在進入內心，認識本我，自身蛻變：路徑是階梯</p>
             </a>
             <a
-              href='https://news.ltn.com.tw/news/life/breakingnews/1549408'
+              href='/critics/2'
               target="_blank"
               style={{ width: '400px', height:"400px",margin: '10px', display:"block", overflow:"hidden" }}
             >
-                <img src="https://img.ltn.com.tw/Upload/news/600/2015/12/23/1549408_3.jpg" alt="image" style={{height:"80%"}}/>
-                {/* <iframe 
-                    width="360" 
-                    height="202.5" 
-                    src="https://www.youtube.com/embed/ObYXbaKtgz8?si=9x2Aj8_MIgL9hMk7"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe> */}
-              <p>作品名稱：記憶的碎片</p>
+                <img src="https://live.staticflickr.com/65535/54441809002_a7757e2ef7.jpg" alt="image" style={{height:"80%"}}/>
+                <p>風・海・記憶──莊志輝的藝術創作</p>
             </a>
           </div>
         </div>

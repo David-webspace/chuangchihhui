@@ -1,14 +1,16 @@
 import React from 'react'
-import Allart from '../datas/artworks.json'
+import allArt from '../datas/artworks.json'
+import { useTranslation } from 'react-i18next';
 
 const AllArt = () => {
+    const { i18n } = useTranslation();
 
-    const artRender = Allart.map((art, index) => {
+    const artRender = allArt.map((art, index) => {
         return(
             <div style={{width:"15%"}} key={index}>
                 <img src={art.img} alt="" style={{width:"100%"}}/>
                 <div>
-                    <h5>{art.name}</h5>
+                    <h5>{i18n.language === 'en' && art.enName ? art.enName : art.name}</h5>
                     <h5>{art.size}   {art.mediums} {art.year}</h5>
                 </div>
             </div>
@@ -16,10 +18,10 @@ const AllArt = () => {
     })
 
     return (
-    <div className='df jc-sb fl-wp'>
-        {artRender}
-    </div>
-  )
+        <div className='df jc-sb fl-wp'>
+            {artRender}
+        </div>
+    )
 }
 
 export default AllArt
