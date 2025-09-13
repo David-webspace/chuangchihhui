@@ -11,12 +11,12 @@ const Homevideo = () => {
         {/* 紀錄片 */}
         <div className='df fd-c aln-itm-c Container'>
             <h2 className='videoTitle'>
-              {i18n.language === 'en' ? 'Documentary: The Story Behind the Creation' : '紀錄片：創作背後的故事'}
+              {i18n.language === 'en' ? 'The Story Behind the Creation' : '創作背後的故事'}
             </h2>
             <p className='videoBrief'>
               {i18n.language === 'en'
                 ? "Documentary Spring Breezes Would Always Life Revive – The Legacy of Chuang Chih-Hui portrays his life journey from Penghu to Hsinchu, showcasing how he transforms everyday experiences and inspirations from nature into a unique artistic language."
-                : "這部紀錄片展示了藝術家創作過程中的靈感與故事，讓觀眾更深入了解每件作品背後的意義。"}
+                : "紀錄片《春風吹又起 莊志輝薪傳展》描繪他從澎湖到新竹的生命旅程，展現如何將生活與自然靈感化為獨特的藝術語彙。"}
             </p>
             <iframe
                 // width="800"
