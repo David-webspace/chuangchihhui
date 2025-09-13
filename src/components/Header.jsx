@@ -128,7 +128,7 @@ const Header = () => {
     const toggleHeader = () => {
         setIsHeaderOpen(!isHeaderOpen);
     };
-    
+
 
     return (
         <div className='headerContainer'>

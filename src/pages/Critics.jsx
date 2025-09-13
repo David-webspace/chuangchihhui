@@ -12,28 +12,31 @@ const SCREEN_BREAKPOINTS = {
   DESKTOP: { min: 1024, max: 1960, width: '31%' }
 };
 
-const CriticCard = ({ critic, width, visibleSection }) => (
-  <div className="criticCard">
-    <Link 
-      to={`${
-        visibleSection==='critics' ? 
-        `/critics/${critic.id}` : 
-        `${critic.url}`
-      }`}
-      target={`${visibleSection==='report' ? '_blank' : ''}`}
-    >
-      <div className="crticsThumbnail">
-        <img src={critic.bg} alt={critic.title} className="fw" />
-      </div>
-      <div style={{width:"100%"}}>
-        <h3 style={{color:"var(--title-grey)"}} className="mg-b-20">{critic.title}</h3>
-        <h4 className='mg-b-5'>{critic.concept}</h4>
-        <h4 style={{display: `${visibleSection==='critics' ? '' : 'none'}`}} className='mg-b-5'>{critic.author}</h4>
-        <h4>{critic.description}</h4>
-      </div>
-    </Link>
-  </div>
-);
+const CriticCard = ({ critic, width, visibleSection }) => {
+  const { i18n } = useTranslation();
+  return (
+    <div className="criticCard">
+      <Link
+        to={`$${
+          visibleSection==='critics' ?
+          `/critics/${critic.id}` :
+          `${critic.url}`
+        }`}
+        target={`${visibleSection==='report' ? '_blank' : ''}`}
+      >
+        <div className="crticsThumbnail">
+          <img src={critic.bg} alt={critic.title} className="fw" />
+        </div>
+        <div style={{width:"100%"}}>
+          <h3 style={{color:"var(--title-grey)"}} className="mg-b-20">{i18n.language === 'en' && critic.enTitle ? critic.enTitle : critic.title}</h3>
+          <h4 className='mg-b-5'>{i18n.language === 'en' && critic.enConcept ? critic.enConcept : critic.concept}</h4>
+          <h4 style={{display: `${visibleSection==='critics' ? '' : 'none'}`}} className='mg-b-5'>{i18n.language === 'en' && critic.enAuthor ? critic.enAuthor : critic.author}</h4>
+          <h4>{i18n.language === 'en' && critic.enDescription ? critic.enDescription : critic.description}</h4>
+        </div>
+      </Link>
+    </div>
+  );
+};
 
 // Updated TabButton component with responsive features
 const TabButton = ({ label, isActive, onClick, screenWidth }) => {
