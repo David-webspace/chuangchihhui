@@ -158,6 +158,10 @@ header ul ul li a{
     header a{
         color: #ffffff;
     }
+    .menuItem > a, .menuItem > span {
+        color: #fff !important;
+    }
+
     
     header ul ul li a{
         color: #8C8383;
