@@ -17,14 +17,15 @@ const MuseumTaipei = () => {
       <div style={{position:"relative"}} className='artworkPeriodItem'>
         <Link to={`/portfolio/artworks/${artwork.id}`} style={{height:"100%"}}>
           <img
-            src={artworks[img_Id].thumbnail} alt="" 
+            src={artworks[img_Id].thumbnail} alt=""
             className='bx-sd-sm imgActive'
             style={{width:"100%", height:"100%"}}
           />
           <div className='thumbnailMask'>
             <div className=''>
-              <h5 style={{marginBottom:'14.56px'}}>{artwork.name}</h5>
-              <h5>{artwork.size} {artwork.mediums} {artwork.year}</h5>
+              <h5 style={{marginBottom:'14.56px'}}>{i18n.language === 'en' && artwork.enName ? artwork.enName : artwork.name}</h5>
+              <h5 style={{marginBottom:'14.56px'}}>{artwork.size} {i18n.language === 'en' && artwork.enMediums ? artwork.enMediums : artwork.mediums}</h5>
+              <h5>{artwork.year}</h5>
             </div>
           </div>
         </Link>

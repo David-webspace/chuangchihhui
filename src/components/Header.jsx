@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import '../css/header.css';
 import { FaBars, FaTimes } from "react-icons/fa"; // 漢堡按鈕和關閉按鈕
 import menuItems from '../datas/menuItem.json';
-// Removed duplicate i18n import
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from './header/LanguageSelector';
 import { getLocalizedPath } from '../getLocalizedPath';
@@ -90,13 +89,20 @@ const Header = () => {
 
         return (
             <li key={index} onClick={handleMenuClick} className='pd-w-10 menuItem' >
-                <Link
-                    to={getLocalizedPath(menu.url, i18n.language)}
-                    className={`pd-10 db ${menu.id === menuItem ? 'menuItemActive' : ''}`}
-                    style={{ color: `${menu.id === menuItem ? 'black' : ''}` }}
-                >
-                    {t(menu.menu)}
-                </Link>
+                {menu.url
+                    ? (
+                        <Link
+                            to={getLocalizedPath(menu.url, i18n.language)}
+                            className={`pd-10 db ${menu.id === menuItem ? 'menuItemActive' : ''}`}
+                            style={{ color: `${menu.id === menuItem ? 'black' : ''}` }}
+                        >
+                            {t(menu.menu)}
+                        </Link>
+                    )
+                    : (
+                        <span className="pd-10 db">{t(menu.menu)}</span>
+                    )
+                }
 
                 {/* Check if there are submenus and render them */}
                 {menu.sub.length > 0 && (
@@ -151,7 +157,7 @@ const Header = () => {
             >
                 <div className={`menuContainer ${location.pathname !== '/' ? 'df' : 'dn'}`}>
                     {/* Logo Container */}
-                    <Link to={getLocalizedPath('/', i18n.language)} className='Logo' style={{ marginRight: '0px' }}>
+                    <Link to={getLocalizedPath('/', i18n.language)} className='Logo desktopOnly' style={{ marginRight: '0px' }}>
                         <img
                             src="https://live.staticflickr.com/65535/54137328621_14ed0a9d0d_c.jpg"
                             alt=""
@@ -162,7 +168,11 @@ const Header = () => {
                         </div>
                     </Link>
 
-                    <ul className='menuItemContainer' ref={menuRef}>
+                    <ul
+                        className='menuItemContainer'
+                        style={ScreenWidth <= 1024 ? { marginTop: '50px' } : {}}
+                        ref={menuRef}
+                    >
                         {menuItemRender}
                     </ul>
                 </div>

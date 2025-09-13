@@ -1,0 +1,6 @@
+/* 桌機專用元素，手機隱藏 */
+@media (max-width: 1024px) {
+  .desktopOnly {
+    display: none !important;
+  }
+}

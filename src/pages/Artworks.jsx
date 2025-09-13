@@ -12,7 +12,7 @@ const ArtworkDetails = ({ artwork }) => {
             <ul className='mg-b-30'>
             {[
                 { label: i18n.language === 'en' ? 'Size' : '尺寸', value: artwork.size },
-                { label: i18n.language === 'en' ? 'Medium' : '媒材', value: artwork.mediums },
+                { label: i18n.language === 'en' ? 'Medium' : '媒材', value: i18n.language === 'en' ? artwork.enMediums : artwork.mediums },
                 { label: i18n.language === 'en' ? 'Year' : '年份', value: artwork.year }
             ].map(({ label, value }) => (
                 <span key={label} className='df'>
@@ -81,7 +81,7 @@ const ResponsiveArtworkView = ({ artwork, screenWidth }) => {
 const SimilarArtworks = ({ artworks, currentArtworkId }) => {
     const currentArtwork = artworks[currentArtworkId];
     if (!currentArtwork) return null;
-    
+
     // Check if there are no similar artworks
     if (!currentArtwork.similarArt || currentArtwork.similarArt.length === 0) {
         const { i18n } = useTranslation();
@@ -99,7 +99,7 @@ const SimilarArtworks = ({ artworks, currentArtworkId }) => {
             <h3 className='mg-b-30'>{i18n.language === 'en' ? 'Similar Artworks' : '相似作品'}</h3>
             <div className='similarArtworkContainer'>
                 {currentArtwork.similarArt.map((similarId, index) => {
-                    
+
                     const similarArtwork = artworks[similarId - 1];
                     if (!similarArtwork) return null;
 
@@ -132,13 +132,13 @@ const Artworks = ({ artworks = [] }) => {
 
     return (
         <div className='pd-xContainer'>
-            <ResponsiveArtworkView 
-                artwork={currentArtwork} 
-                screenWidth={screenWidth} 
+            <ResponsiveArtworkView
+                artwork={currentArtwork}
+                screenWidth={screenWidth}
             />
-            <SimilarArtworks 
-                artworks={artworks} 
-                currentArtworkId={currentArtworkId} 
+            <SimilarArtworks
+                artworks={artworks}
+                currentArtworkId={currentArtworkId}
             />
         </div>
     );

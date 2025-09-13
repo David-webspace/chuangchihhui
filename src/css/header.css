@@ -50,7 +50,7 @@ header ul ul li a{
 }
 
 .menuContainer{
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -79,20 +79,30 @@ header ul ul li a{
 .submenuContainer {
     position: absolute;
     top: 100%;
-    width: 160px;
+    /* width: 160px; */
+    width: max-content;
     background-color: #fff;
     flex-direction: column;
+    border: 1px solid var(--grey-4);
 }
 
 .submenuItem {
     /* margin-top: 5px; */
-    border-bottom: 1px solid var(--grey-1);
+    border-bottom: 1px solid var(--grey-4);
 }
 
 .submenuLink {
     color: #000000; /* Default color for submenu items */
     font-weight: 400;
     padding: 20px 10px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.submenuItem:hover .submenuLink,
+.submenuLink:hover {
+    background-color: #f0f0f0;
+    /* color: var(--green-1,rgb(244, 244, 244)); */
+    cursor: pointer;
 }
 
 .menuItemActive .submenuContainer {
@@ -153,6 +163,13 @@ header ul ul li a{
         color: #8C8383;
     }
 
+    /* 桌機專用元素，手機隱藏 */
+@media (max-width: 1024px) {
+    .desktopOnly {
+      display: none !important;
+    }
+}
+
     .defaultLogo{
         display: block;
         position: absolute;
@@ -189,6 +206,10 @@ header ul ul li a{
         width: 100%;
         flex-direction: column;
         text-align: center;
+        cursor: pointer;
+    }
+    .menuItem: hover{
+        cursor: pointer;
     }
     
     .menuItemContainer li{
@@ -201,6 +222,7 @@ header ul ul li a{
         width: 100%;
         position: static;
         background-color: transparent;
+        border: 1px solid rgb(22, 22, 22);
     }
     
     .submenuItem {

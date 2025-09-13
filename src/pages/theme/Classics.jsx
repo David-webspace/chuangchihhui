@@ -23,8 +23,9 @@ const Classics = () => {
           />
           <div className='thumbnailMask'>
             <div className=''>
-              <h5 style={{marginBottom:'14.56px'}}>{artwork.name}</h5>
-              <h5>{artwork.size} {artwork.mediums} {artwork.year}</h5>
+              <h5 style={{marginBottom:'14.56px'}}>{i18n.language === 'en' && artwork.enName ? artwork.enName : artwork.name}</h5>
+              <h5 style={{marginBottom:'14.56px'}}>{artwork.size} {i18n.language === 'en' && artwork.enMediums ? artwork.enMediums : artwork.mediums}</h5>
+              <h5>{artwork.year}</h5>
             </div>
           </div>
         </Link>

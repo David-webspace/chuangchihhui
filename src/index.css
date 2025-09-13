@@ -18,9 +18,10 @@
   --black: #000;
   --content-grey: rgba(0, 0, 0, 0.6);
   --title-grey : rgba(0, 0, 0, 0.8);
-  --grey-1:#9f9f9f;
+  --grey-1: #9f9f9f;
   --grey-2: #c9c9c9;
   --grey-3: #9a9a9a;
+  --grey-4:rgb(226, 226, 226);
   --grey-active: #383838;
 }
 

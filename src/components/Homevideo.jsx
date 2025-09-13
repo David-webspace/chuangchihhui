@@ -10,9 +10,13 @@ const Homevideo = () => {
 
         {/* 紀錄片 */}
         <div className='df fd-c aln-itm-c Container'>
-            <h2 className='videoTitle'>紀錄片：創作背後的故事</h2>
+            <h2 className='videoTitle'>
+              {i18n.language === 'en' ? 'Documentary: The Story Behind the Creation' : '紀錄片：創作背後的故事'}
+            </h2>
             <p className='videoBrief'>
-              這部紀錄片展示了藝術家創作過程中的靈感與故事，讓觀眾更深入了解每件作品背後的意義。
+              {i18n.language === 'en'
+                ? "Documentary Spring Breezes Would Always Life Revive – The Legacy of Chuang Chih-Hui portrays his life journey from Penghu to Hsinchu, showcasing how he transforms everyday experiences and inspirations from nature into a unique artistic language."
+                : "這部紀錄片展示了藝術家創作過程中的靈感與故事，讓觀眾更深入了解每件作品背後的意義。"}
             </p>
             <iframe
                 // width="800"
@@ -29,22 +33,36 @@ const Homevideo = () => {
         <hr style={{ margin: '40px 0', borderColor: '#ccc' }} />
 
         <div style={{ marginTop: '30px', textAlign: 'center' }}>
-          <h3 className='mg-b-10'>關於藝術家</h3>
-          <p style={{ lineHeight: '3', fontSize: '16px', color: '#555', maxWidth: '600px', margin: '0 auto' }}>
-            我的作品<br/>
-            起草創作 像要誕生的嬰兒<br/>
-            創作時 像充滿慾望的青少年<br/>
-            完成時 宛如追求完美的中年<br/>
-            展出時 如同過往的先人<br/>
-            讓人品頭論足<br/>
-            人總是在八卦是非中<br/>
-            找尋一點自性的空間
+          <h3 className='mg-b-10'>{i18n.language === 'en' ? 'About the Artist' : '關於藝術家'}</h3>
+          <p className='aboutArtistText' style={{ lineHeight: '3', fontSize: '16px', color: '#555', maxWidth: '600px', margin: '0 auto' }}>
+            {i18n.language === 'en' ? (
+              <>
+                My Work<br/>
+                Drafting a creation is like a baby about to be born.<br/>
+                In the process of creating, I am like a teenager full of desire.<br/>
+                When it is finished, it resembles a middle-aged person in pursuit of perfection.<br/>
+                When it is exhibited, it stands like the forebears of the past,<br/>
+                open to people’s judgment and critique.<br/>
+                People are always caught up in gossip and disputes, seeking just a little space for their true self.
+              </>
+            ) : (
+              <>
+                我的作品<br/>
+                起草創作 像要誕生的嬰兒<br/>
+                創作時 像充滿慾望的青少年<br/>
+                完成時 宛如追求完美的中年<br/>
+                展出時 如同過往的先人<br/>
+                讓人品頭論足<br/>
+                人總是在八卦是非中<br/>
+                找尋一點自性的空間
+              </>
+            )}
           </p>
         </div>
 
         {/* 推薦內容 */}
         <div style={{ marginTop: '50px', textAlign: 'center' }}>
-          <h3 className='mg-b-20'>推薦內容</h3>
+          <h3 className='mg-b-20'>{i18n.language === 'en' ? 'Recommended Content' : '推薦內容'}</h3>
           <div className="df jc-c fl-wp">
             <a
               href='/critics/1'

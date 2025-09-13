@@ -9,6 +9,18 @@
     color: #555;
 }
 
+@media (max-width: 425px) {
+  .aboutArtistText {
+    font-size: 13px !important;
+  }
+  .videoTitle {
+    font-size: 18px !important;
+  }
+  .videoBrief {
+    font-size: 13px !important;
+  }
+}
+
 iframe{
     width: 100%;
     aspect-ratio: 16 / 9;
